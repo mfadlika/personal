@@ -1,0 +1,30 @@
+{
+  "header": {
+    "works": "Works",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog",
+    "stats": "Stats",
+    "policy": "Privacy & Policy",
+    "switchLanguage": "Switch Language"
+  },
+  "other": {
+    "comingSoon": "Coming Soon",
+    "page": "Page",
+    "waitText": "in the meantime, you can visit my profile below:",
+    "rightsText": "All Rights Reserved"
+  },
+  "contact": {
+    "greeting": "Hello there!",
+    "sentence": "Please contact me",
+    "email": "Email",
+    "talk": "Let's Talk",
+    "enquiries": "For enquiries, please email me using the form below",
+    "name": "Name",
+    "emailAddress": "Email Address",
+    "message": "Message",
+    "send": "Send",
+    "placeHolderName": "Your name",
+    "placeHolderEmail": "Write me something..."
+  }
+}

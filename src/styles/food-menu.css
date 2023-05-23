@@ -1,0 +1,183 @@
+#food-menu {
+  background-image: url("../../public/assets/images/food-bg.jpg");
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
+
+.menu-main {
+  height: 100%;
+}
+
+.menu-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-specialties {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+  height: max-content;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  font-size: xx-large;
+}
+
+@media only screen and (max-width: 1200px) {
+  .menu-desc {
+    display: none;
+  }
+}
+
+.typing-demo {
+  padding-top: 0.5rem;
+  width: 15ch;
+  height: 4rem;
+  animation: typing 2s steps(15), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: Gyahegi;
+  font-size: 2rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.menu-bar {
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  width: 5%;
+  aspect-ratio: 1/1;
+  opacity: 80%;
+  /* box-shadow: 1px 1px 1px 3px whitesmoke; */
+}
+
+.menu-wrap {
+  position: absolute;
+  left: calc(calc(var(--plate-size) + calc(var(--plate-margin) * 2)) * -1);
+  top: calc(calc(var(--plate-size) + calc(var(--plate-margin) * 2)) * -1);
+  /* animation: menu-rotate 5s forwards; */
+}
+
+.menu-rotate-90 {
+  transform: rotate(90deg);
+  transition: 1s;
+}
+
+.menu-rotate-180 {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.menu-rotate-270 {
+  transform: rotate(270deg);
+  transition: 1s;
+}
+
+.menu-rotate-360 {
+  transform: rotate(360deg);
+  transition: 1s;
+}
+
+/* @keyframes menu-rotate {
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+.menu-plate {
+  margin: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: var(--plate-size);
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  box-shadow: 0 0 30px 3px gray;
+}
+
+.menu-options {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 10%;
+  top: 55%;
+  width: 80%;
+}
+
+.menu-card {
+  padding: 8px;
+  margin: 16px;
+  height: 150px;
+  aspect-ratio: 2/3;
+}
+
+.menu-card:hover {
+  border-radius: 1rem;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px whitesmoke;
+}
+
+.menu-option {
+  background-position: calc(50%) 10px;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  height: 50%;
+  margin: auto;
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  box-shadow: 2px 5px 7px 1px gray;
+}
+
+.menu-plate:nth-child(2),
+.menu-card:nth-child(1) > .menu-option {
+  background-image: url("../../public/assets/images/cooked-meat-sauce-platter-modified.png");
+}
+
+.menu-plate:nth-child(1),
+.menu-card:nth-child(2) > .menu-option {
+  background-image: url("../../public/assets/images/meat-with-broccoli-modified.png");
+}
+
+.menu-plate:nth-child(3),
+.menu-card:nth-child(3) > .menu-option {
+  background-image: url("../../public/assets/images/rice-noodles-with-egg-modified.png");
+}
+
+.menu-plate:nth-child(4),
+.menu-card:nth-child(4) > .menu-option {
+  background-image: url("../../public/assets/images/vegetables-salad-modified.png");
+}

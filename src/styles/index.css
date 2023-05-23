@@ -1,0 +1,377 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --time: 3s;
+  --lg: 45;
+  --black-default: #1a1a1d;
+  --eerie-black: #1b1b1b;
+  --rounded-full: 999px;
+  --plate-size: 200px;
+  --plate-margin: 64px;
+  --mobile-height: 147.5px;
+  --mobile-width: 71.5px;
+  --tab-height: 11.97px;
+  --tab-width: 8.36px;
+  --pc-height: 8.36px;
+  --pc-width: 11.97px;
+  --status-bar-color: #128c7e;
+  --status-bar-height: 50px;
+  --tab-status-bar-height: 25px;
+  --pc-status-bar-height: 25px;
+  --screen-border-radius: 28px;
+  --tab-screen-border-radius: 15px;
+  --pc-screen-border-radius: 7px;
+  --apps-head-height: 7%;
+  --tab-apps-head-height: 8%;
+  --pc-apps-head-height: 12%;
+  --pc-home-btn-height: 40px;
+  --e-letter-height: 100px;
+  --plate-size: 200px;
+  --plate-margin: 64px;
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --e-letter-height: 80px;
+  }
+}
+
+@font-face {
+  font-family: Gyahegi;
+  src: url(../../public/assets/gyahegi.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: LemonJelly;
+  src: url(../../public/assets/lemonjelly.ttf) format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black-default);
+  height: 100vh;
+  width: 100vw;
+}
+
+#home {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transition: 3s;
+}
+
+#work {
+  animation: work-animation 1s forwards;
+}
+
+@keyframes work-animation {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+/* Header */
+
+.card-box {
+  position: fixed;
+  z-index: 50;
+  bottom: 3%;
+  left: calc(10% - calc(4.5rem / 2));
+  right: calc(90% - calc(4.5rem / 2));
+  width: 4.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-color: rgba(255, 255, 255, 0.333);
+  border-radius: 999px;
+  transform: translate(0px, 0px) rotate(0deg);
+  transition: 1s;
+  color: #516d91;
+  background-color: #e5edf5;
+  overflow: hidden;
+  box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+}
+
+.card-box:hover {
+  color: #7e97b8;
+  background-color: #e0e8ef;
+  box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+}
+
+.wider {
+  width: 40%;
+  left: 30%;
+  right: 30%;
+  transition: 1s;
+}
+
+.nav-back {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  padding: 10px;
+  height: 4.5rem;
+  width: 9%;
+  opacity: 80%;
+}
+
+@media only screen and (max-width: 768px) {
+  .wider {
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    transition: 1s;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card-box {
+    left: calc(50% - calc(4.5rem / 2));
+    right: calc(50% - calc(4.5rem / 2));
+    animation: card-spin 5s forwards;
+  }
+
+  .card-box.wider {
+    left: 10%;
+    right: 10%;
+    margin: auto;
+    animation: none;
+  }
+
+  @keyframes card-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      box-shadow: -4px -2px 16px 0px #ffffff,
+        4px 2px 16px 0px rgb(95 157 231 / 48%);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .card-box {
+    animation: card-spin 5s forwards;
+  }
+
+  .card-box.wider {
+    animation: none;
+  }
+}
+
+.three-dots {
+  opacity: 70%;
+  transition: 1s;
+}
+
+.animate {
+  transform: rotate(315deg);
+  transition: 1s;
+  animation: visibility 1s forwards;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  align-items: center;
+}
+
+.navlink {
+  display: flex;
+  justify-content: center;
+  opacity: 0%;
+  animation-delay: 0.7s;
+  animation: nav-animate 1s 1s forwards;
+}
+
+.navlink:hover {
+  box-shadow: 1px 1px 1px 3px gray;
+}
+
+.navlink:active {
+  box-shadow: 0px 0px 0px 3px gray;
+}
+
+@keyframes visibility {
+  to {
+    fill: #1f2833;
+    opacity: 70%;
+  }
+}
+
+@keyframes nav-animate {
+  to {
+    opacity: 100%;
+  }
+}
+
+/* Eyes */
+
+.eyes-box,
+.eyes-holder {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eyes-box {
+  height: 600px;
+  width: 600px;
+  border-radius: 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.eyes-holder {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  animation-name: updown;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+
+.eyes {
+  justify-content: center;
+  position: relative;
+  animation-name: bigger;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+
+.rect1,
+.rect3 {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.rect1 {
+  transform: rotate(-45deg);
+  animation-name: hidden;
+  animation-duration: 1s;
+}
+
+.rect2 {
+  animation-name: hidden;
+  animation-duration: 1.3s;
+}
+
+.rect3 {
+  transform: rotate(45deg);
+  animation-name: hidden;
+  animation-duration: 1.6s;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  transform: scale(1);
+  animation-name: looking-eyes;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes updown {
+  1% {
+    top: 149px;
+  }
+  10% {
+    top: 140px;
+  }
+  30% {
+    top: 160px;
+  }
+  50% {
+    top: 140px;
+  }
+  70% {
+    top: 160px;
+  }
+  90% {
+    top: 140px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+
+@keyframes looking-eyes {
+  10% {
+    transform: translate(30px, 0px);
+  }
+  20% {
+    transform: translate(0px, 0px);
+  }
+  30% {
+    transform: translate(-30px, 0px);
+  }
+  40% {
+    transform: translate(-30px, 30px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  60% {
+    transform: translate(30px, 30px);
+  }
+  70% {
+    transform: translate(-30px, 30px);
+  }
+  80% {
+    transform: translate(30px, 30px);
+  }
+  90% {
+    transform: translate(-30px, 30px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes bigger {
+  10% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(5);
+  }
+  60% {
+    transform: scale(5);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes hidden {
+  0% {
+    visibility: hidden;
+  }
+  90% {
+    visibility: hidden;
+  }
+}

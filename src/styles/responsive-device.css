@@ -1,0 +1,162 @@
+.resp-device {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to right, #FFD194, #D1913C);
+}
+
+.box {
+  position: absolute;
+  top: 15%;
+  left: 1%;
+  right: 1%;
+  margin: auto;
+  background-color: gray;
+  height: calc(var(--mobile-height) * 4);
+  width: calc(var(--mobile-width) * 4);
+  border: solid 3px black;
+  border-radius: 30px;
+  transition: var(--time);
+}
+
+.tab {
+  border-radius: 30px;
+  border-width: 15px;
+  width: calc(var(--tab-width) * var(--lg));
+  height: calc(var(--tab-height) * var(--lg));
+  transition: var(--time);
+}
+
+.pc {
+  border-radius: 10px;
+  height: calc(var(--pc-height) * var(--lg));
+  width: calc(var(--pc-width) * var(--lg));
+  transition: var(--time);
+}
+
+.phone-notch {
+  position: absolute;
+  background-color: black;
+  border-color: transparent;
+  top: 17.5%;
+  left: 1%;
+  right: 1%;
+  margin: auto;
+  height: 25px;
+  width: 120px;
+  border-radius: var(--rounded-full);
+  transition: var(--time);
+}
+
+@media only screen and (max-width: 480px) {
+  .phone-notch {
+    width: 20%;
+  }
+}
+
+.tab-notch {
+  top: 15.5%;
+  height: 9px;
+  width: 9px;
+  border: solid 0.5px;
+  border-color: #e5edf5;
+  background-color: var(--black-default);
+  transition: var(--time);
+}
+
+.pc-notch {
+  background-color: #2c3539;
+  border-radius: 0;
+  height: 50px;
+  border-color: transparent;
+  top: calc(15% + calc(var(--pc-height) * 45));
+  transition: var(--time);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.phone-screen {
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  border-radius: var(--screen-border-radius);
+  transition: var(--time);
+}
+
+.tab-screen {
+  top: 0;
+  border-radius: var(--tab-screen-border-radius);
+  transition: var(--time);
+}
+
+.pc-screen {
+  top: 0;
+  border-radius: var(--pc-screen-border-radius);
+  transition: var(--time);
+}
+
+.status-bar {
+  width: 100%;
+  height: var(--status-bar-height);
+  background-color: var(--status-bar-color);
+  transition: var(--time);
+}
+
+.tab-status-bar {
+  background-color: var(--status-bar-color);
+  height: var(--tab-status-bar-height);
+  transition: var(--time);
+}
+
+.pc-status-bar {
+  background-color: var(--eerie-black);
+  height: var(--pc-status-bar-height);
+  transition: var(--time);
+}
+
+.home-btn {
+  position: absolute;
+  bottom: 1%;
+  left: 30%;
+  right: 30%;
+  height: 5px;
+  border-radius: var(--rounded-full);
+  width: 40%;
+  background-color: whitesmoke;
+  transition: var(--time);
+}
+
+.pc-home-btn {
+  background-color: var(--eerie-black);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--pc-home-btn-height);
+  width: 100%;
+  border-radius: 0;
+  transition: var(--time);
+}
+
+.tabs-btm {
+  display: none;
+  transition: var(--time);
+}
+
+.pc-tabs-btm {
+  display: contents;
+  transition: var(--time);
+}
+
+.pc-tabs-btm-apps {
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 95%;
+  border: solid 1px;
+  border-color: var(--eerie-black);
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: var(--time);
+}

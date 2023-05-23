@@ -1,0 +1,56 @@
+#work {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .box-container {
+    width: 100vw;
+    min-height: 100vh;
+    animation: slide 3s forwards;
+  }
+  
+  @keyframes slide {
+    from {
+      opacity: 5%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+  
+  .gallery-back-button,
+  .gallery-forward-button {
+    opacity: 8%;
+    position: absolute;
+    z-index: 1;
+    padding: 15px;
+    bottom: 45%;
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: var(--rounded-full);
+    background-color: var(--black-default);
+    animation: button-display 2s;
+  }
+  
+  @keyframes button-display {
+    50% {
+      opacity: 100%;
+      box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+    }
+  }
+  
+  .gallery-back-button {
+    left: 5%;
+  }
+  
+  .gallery-forward-button {
+    right: 5%;
+    transform: rotate(180deg);
+  }
+  
+  .gallery-back-button:hover,
+  .gallery-forward-button:hover {
+    opacity: 80%;
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+  }
+  

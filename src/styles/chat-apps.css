@@ -1,0 +1,102 @@
+.apps {
+  position: relative;
+  width: 100%;
+  height: calc(100% - var(--status-bar-height));
+  background-color: var(--status-bar-color);
+  transition: var(--time);
+  color: black;
+}
+
+.tab-apps {
+  height: calc(100% - var(--tab-status-bar-height));
+  transition: var(--time);
+}
+
+.pc-apps {
+  height: calc(100% - var(--pc-status-bar-height));
+  transition: var(--time);
+}
+
+.apps-head {
+  line-height: 15px;
+  height: var(--apps-head-height);
+  width: 100%;
+  font-size: 18px;
+  background-color: var(--status-bar-color);
+  transition: var(--time);
+}
+
+.tab-apps-head {
+  height: var(--tab-apps-head-height);
+  font-size: 18px;
+  transition: var(--time);
+}
+
+.pc-apps-head {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: var(--pc-apps-head-height);
+  font-size: 18px;
+  line-height: 18px;
+  transition: var(--time);
+}
+
+.img {
+  height: 90%;
+  aspect-ratio: 1/1;
+  transition: var(--time);
+}
+
+.pc-apps-head > div > .img {
+  height: 100%;
+  transition: var(--time);
+}
+
+.apps-body {
+  width: 100%;
+  height: calc(100% - var(--apps-head-height));
+  background-color: var(--black-default);
+  transition: var(--time);
+}
+
+.tab-apps-body {
+  height: calc(100% - var(--tab-apps-head-height));
+  transition: var(--time);
+}
+
+.pc-apps-body {
+  height: calc(100% - var(--pc-apps-head-height) - var(--pc-home-btn-height));
+  transition: var(--time);
+}
+
+.chat {
+  height: 88%;
+  overflow-y: scroll;
+  transition: var(--time);
+}
+
+.message {
+  max-width: 80%;
+  border-radius: 5px;
+  background-color: #ece5dd;
+}
+
+.control {
+  height: 12%;
+  width: 100%;
+  padding-top: 4px;
+  background-color: var(--status-bar-color);
+  transition: var(--time);
+}
+
+.control > div > input {
+  background-color: #ece5dd;
+}
+
+.control > div > input:focus {
+  outline: none;
+}
+
+.control > div > input:disabled {
+  opacity: 50%;
+}
