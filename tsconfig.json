@@ -19,6 +19,17 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "type-env.d.ts", "**/*.ts", "**/*.tsx", "i18n.js", "src/pages/Home.js", "next-i18next.config.js", "src/pages/api/server.ts", "src/pages/stats.tsx", "src/components/LineChart.js"],
+  "include": [
+    "next-env.d.ts",
+    "type-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "i18n.js",
+    "src/pages/Home.js",
+    "next-i18next.config.js",
+    "src/pages/api/server.ts",
+    "src/components/stats.tsx",
+    "src/components/LineChart.js"
+  ],
   "exclude": ["node_modules"]
 }

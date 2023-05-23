@@ -1,10 +1,8 @@
 import Card from "@/components/Card";
 import "chart.js/auto";
 import { GetServerSideProps } from "next";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Line, Pie } from "react-chartjs-2";
-import { getStat } from "./api/server";
+import { getStat } from "../pages/api/server";
 
 const backgroundColor = [
   "rgba(255, 99, 132, 0.2)",
@@ -42,8 +40,6 @@ interface DataProps {
 interface DataArrayProps extends Array<DataProps> {}
 
 export default function Stats(props: any) {
-  const { t } = useTranslation();
-
   const graph: DataArrayProps = props.graph;
   const city: DataArrayProps = props.city;
   const country: DataArrayProps = props.country;
@@ -119,9 +115,9 @@ export default function Stats(props: any) {
   };
 
   return (
-    <div className="w-screen p-4 dark:bg-gray-800">
+    <div className="w-screen h-screen overflow-scroll p-4 dark:bg-gray-800">
       <div className="w-full mx-auto text-center text-6xl font-extrabold mb-8 text-gray-700 dark:text-gray-100">
-        {t("header.stats")}
+        Statistic
       </div>
       <div className="grid grid-cols-1 gap-1 md:grid-cols-2 md:gap-2 lg:grid-cols-4 md:gap-4 px-8">
         <Card
@@ -181,24 +177,3 @@ export default function Stats(props: any) {
     </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const ip =
-    ctx.req.headers["x-forwarded-for"] ||
-    (ctx.req.socket.remoteAddress as string);
-
-  var { graph, stats, city, country }: any = await getStat(ip, "stats");
-
-  return {
-    props: {
-      ...(await serverSideTranslations(ctx.locale as string, [
-        "common",
-        "header",
-      ])),
-      graph,
-      stats,
-      city,
-      country,
-    },
-  };
-};

@@ -1,5 +1,4 @@
 import { GetServerSideProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import postAPI from "./api/server";
 
 export default function Home() {
@@ -44,11 +43,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   await postAPI(ip, "index");
 
   return {
-    props: {
-      ...(await serverSideTranslations(ctx.locale as string, [
-        "common",
-        "header",
-      ])),
-    },
+    props: {},
   };
 };
