@@ -5,37 +5,48 @@ import { useRouter } from "next/router";
 
 export default function Header() {
   const [isActive, SetIsActive] = useState<Boolean>(false);
-  const { pathname } = useRouter()
+  const { pathname } = useRouter();
 
   return (
-    <div className={isActive ? "card-box wider" : "card-box"}>
-      {isActive && pathname !== "/" && (
-        <Link href="/" className="nav-back">
-          <ArrowLeftSVG fill="#516d91" />
-        </Link>
+    <>
+      {pathname !== "/" && (
+        <div className="mobile-back lg:hidden">
+          {pathname !== "/" && (
+            <Link href="/">
+              <ArrowLeftSVG fill="#516d91"/>
+            </Link>
+          )}
+        </div>
       )}
-      <nav className="nav w-full">
-        <div className={isActive ? "navlink w-4/12" : "hidden"}>
-          <Link href="/work">
-            <span className="text-2xl font-bold">Gallery</span>
+      <div className={isActive ? "card-box wider" : "card-box"}>
+        {isActive && pathname !== "/" && (
+          <Link href="/" className="nav-back max-lg:hidden">
+            <ArrowLeftSVG fill="#516d91" />
           </Link>
-        </div>
-        <button
-          onClick={() => SetIsActive(!isActive)}
-          className={isActive ? "w-4/12" : ""}
-        >
-          <PlusSVG
-            height="50px"
-            fill="#1A1A1D"
-            className={isActive ? "three-dots animate" : "three-dots"}
-          />
-        </button>
-        <div className={isActive ? "navlink w-4/12" : "hidden"}>
-          <Link href="/about">
-            <span className="text-2xl font-bold">About</span>
-          </Link>
-        </div>
-      </nav>
-    </div>
+        )}
+        <nav className="nav w-full">
+          <div className={isActive ? "navlink w-4/12" : "hidden"}>
+            <Link href="/work">
+              <span className="text-2xl font-bold">Gallery</span>
+            </Link>
+          </div>
+          <button
+            onClick={() => SetIsActive(!isActive)}
+            className={isActive ? "w-4/12" : ""}
+          >
+            <PlusSVG
+              height="50px"
+              fill="#1A1A1D"
+              className={isActive ? "three-dots animate" : "three-dots"}
+            />
+          </button>
+          <div className={isActive ? "navlink w-4/12" : "hidden"}>
+            <Link href="/about">
+              <span className="text-2xl font-bold">About</span>
+            </Link>
+          </div>
+        </nav>
+      </div>
+    </>
   );
 }
