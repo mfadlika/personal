@@ -25,7 +25,7 @@ export default function ChatHeader({ option, color, typing }: Options) {
           alt="profile"
         />
         <div className="pl-1">
-          <p style={{ color: color }}>Ex-Girlfriend</p>
+          <p className="max-sm:text-xs" style={{ color: color }}>Ex-Girlfriend</p>
           <p
             className={`text-xs ${typing === "Online" ? "" : "italic"}`}
             style={{ color: color }}
@@ -34,7 +34,7 @@ export default function ChatHeader({ option, color, typing }: Options) {
           </p>
         </div>
       </div>
-      <div className="flex justify-between items-center w-3/12 pr-2 py-0.5">
+      <div className="flex justify-between items-center w-3/12 pr-2 py-0.5 max-sm:py-0">
         <VideoCallSVG height="75%" className="p-1" fill={color} />
         <PhoneSVG height="75%" className="p-1" fill={color} />
       </div>

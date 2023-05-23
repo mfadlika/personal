@@ -41,14 +41,14 @@ export default function FoodMenu() {
   return (
     <section id="food-menu">
       <main className="menu-main">
-        <div className="menu-box w-8/12 h-5/6 mx-auto my-16">
+        <div className="menu-box w-8/12 h-5/6 mx-auto my-16 max-sm:h-4/6 max-sm:w-10/12">
           <div className="menu-specialties">
             <div className="typing-demo">OUR SPECIALTIES</div>
           </div>
-          <div className="menu-bar">
+          <div className="menu-bar max-sm:hidden">
             <BurgerSVG fill="white" height="100%" width="100%" />
           </div>
-          <div className="flex justify-center mx-auto w-5/12 pl-12 pt-5">
+          <div className="flex justify-center mx-auto w-5/12 pl-12 pt-5 max-sm:hidden">
             <div className="text-3xl">
               {foodMenu[(degree / 90 - 1) as number].name}
               <h5 className="menu-desc text-lg text-justify">

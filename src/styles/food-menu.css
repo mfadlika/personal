@@ -54,6 +54,14 @@
   font-size: 2rem;
 }
 
+@media only screen and (max-width: 420px) {
+  .typing-demo {
+    height: 3rem;
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+}
+
 @keyframes typing {
   from {
     width: 0;
@@ -80,7 +88,6 @@
   position: absolute;
   left: calc(calc(var(--plate-size) + calc(var(--plate-margin) * 2)) * -1);
   top: calc(calc(var(--plate-size) + calc(var(--plate-margin) * 2)) * -1);
-  /* animation: menu-rotate 5s forwards; */
 }
 
 .menu-rotate-90 {
@@ -103,21 +110,6 @@
   transition: 1s;
 }
 
-/* @keyframes menu-rotate {
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
-
 .menu-plate {
   margin: 64px;
   background-repeat: no-repeat;
@@ -126,6 +118,23 @@
   aspect-ratio: 1/1;
   border-radius: 999px;
   box-shadow: 0 0 30px 3px gray;
+}
+
+@media only screen and (max-width: 420px) {
+  .menu-plate {
+    margin: 59px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 162.5px;
+    aspect-ratio: 1/1;
+    border-radius: 999px;
+    box-shadow: 0 0 30px 3px gray;
+  }
+
+  .menu-wrap {
+    left: calc(calc(162.5px + 81.25px) * -1);
+    top: calc(calc(162.5px + 81.25px) * -1);
+  }
 }
 
 .menu-options {
@@ -160,6 +169,20 @@
   aspect-ratio: 1/1;
   border-radius: 999px;
   box-shadow: 2px 5px 7px 1px gray;
+}
+
+@media only screen and (max-width: 420px) {
+  .menu-options {
+    overflow-x: scroll;
+    padding-left: 210px;
+  }
+
+  .menu-card {
+    padding: 8px;
+    margin: 8px;
+    height: 150px;
+    aspect-ratio: 2/3;
+  }
 }
 
 .menu-plate:nth-child(2),
