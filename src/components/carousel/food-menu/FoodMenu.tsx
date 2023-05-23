@@ -41,7 +41,7 @@ export default function FoodMenu() {
   return (
     <section id="food-menu">
       <main className="menu-main">
-        <div className="menu-box w-8/12 h-5/6 bg-slate-500 mx-auto my-16">
+        <div className="menu-box w-8/12 h-5/6 mx-auto my-16">
           <div className="menu-specialties">
             <div className="typing-demo">OUR SPECIALTIES</div>
           </div>
