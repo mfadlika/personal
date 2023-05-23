@@ -9,16 +9,16 @@ export default function About() {
   const router: NextRouter = useRouter();
   const { locale } = router;
   return (
-    <div className="h-max lg:px-20 md:px-6 px-4 dark:bg-gray-900">
+    <div className="h-max lg:px-20 md:px-6 px-4 bg-gray-900">
       <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
         <div className="w-full lg:w-6/12">
-          <p className="font-bold text-5xl leading-3 text-indigo-700 my-5 dark:text-indigo-500 hover:text-indigo-800 cursor-pointer pt-16 pb-2">
+          <p className="font-bold text-5xl leading-3 text-indigo-700 my-5 text-sky-500 hover:text-indigo-800 cursor-pointer pt-16 pb-2">
             About
           </p>
-          <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 dark:text-white leading-9">
+          <h2 className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 text-white leading-9">
             Hello friends! This page is about me, the owner of this webiste.
           </h2>
-          <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-200 mt-6">
+          <p className="font-normal text-base leading-6 text-slate-200 mt-6">
             <span className="max-sm:hidden">
               &emsp;&emsp;
             </span>
@@ -31,7 +31,7 @@ export default function About() {
             that catch my eyes as I will always continue learning and updating
             my skills.
           </p>
-          <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-200 mt-6">
+          <p className="font-normal text-base leading-6 text-slate-200 mt-6">
             <span className="max-sm:hidden">
               &emsp;&emsp;
             </span>
@@ -90,10 +90,10 @@ export default function About() {
       </div>
       <div className="grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4 mb-8 max-sm:hidden">
         <div>
-          <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 dark:text-white mt-6">
+          <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 text-white mt-6">
             Founded
           </p>
-          <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-200 mt-6">
+          <p className="font-normal text-base leading-6 text-slate-200 mt-6">
             The idea of making this website is started with amazement of{" "}
             <Link
               href="https://www.superrb.com"
@@ -106,18 +106,18 @@ export default function About() {
           </p>
         </div>
         <div>
-          <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 dark:text-white mt-6">
+          <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 text-white mt-6">
             All over the World
           </p>
-          <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-200 mt-6">
+          <p className="font-normal text-base leading-6 text-slate-200 mt-6">
             Visitors across the world with more than 20 countries and 50 cities.
           </p>
         </div>
         <div className="sm:block hidden">
-          <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 dark:text-white mt-6">
+          <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-gray-800 text-white mt-6">
             350+ Visitors
           </p>
-          <p className="font-normal text-base leading-6 text-gray-600 dark:text-gray-200 mt-6">
+          <p className="font-normal text-base leading-6 text-slate-200 mt-6">
             Hundreds visitors a day and keep adding up every day. Calm down!
             This website will never collect your sensitive data, collect only
             your public IP for statistic purpose of this website.
