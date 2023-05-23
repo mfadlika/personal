@@ -58,7 +58,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     ctx.req.headers["x-forwarded-for"] ||
     (ctx.req.socket.remoteAddress as string);
 
-  var { graph, stats, city, country }: any = await getStat(ip, "stats");
+  var { graph, stats, city, country }: any = await getStat(ip, "works");
 
   return {
     props: {
