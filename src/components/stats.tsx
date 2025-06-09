@@ -37,12 +37,15 @@ interface DataProps {
   count: number;
 }
 
-interface DataArrayProps extends Array<DataProps> {}
+type DataArrayProps = DataProps[];
 
 export default function Stats(props: any) {
-  const graph: DataArrayProps = props.graph;
-  const city: DataArrayProps = props.city;
-  const country: DataArrayProps = props.country;
+  const graph: DataArrayProps = Array.isArray(props.graph) ? props.graph : [];
+  const city: DataArrayProps = Array.isArray(props.city) ? props.city : [];
+  const country: DataArrayProps = Array.isArray(props.country) ? props.country : [];
+  const stats = props.stats || [
+    { total_visitors: 0, unique_visitors: 0, today_visitors: 0, weekly_visitors: 0 },
+  ];
 
   var labels: number[] = [];
   var cityLabels: string[] = [];
@@ -88,7 +91,7 @@ export default function Stats(props: any) {
     datasets: [
       {
         label: "Visitors",
-        data: [...cityCount, props.stats[0]["total_visitors"] - cityTotal],
+        data: [...cityCount, (stats[0]?.total_visitors ?? 0) - cityTotal],
         fill: true,
         backgroundColor: backgroundColor,
         borderColor: borderColor,
@@ -104,7 +107,7 @@ export default function Stats(props: any) {
         label: "Visitors",
         data: [
           ...countryCount,
-          props.stats[0]["total_visitors"] - countryTotal,
+          (stats[0]?.total_visitors ?? 0) - countryTotal,
         ],
         fill: true,
         backgroundColor: backgroundColor,
@@ -123,22 +126,22 @@ export default function Stats(props: any) {
         <Card
           label="Total Visitors"
           className="text-rose-500"
-          count={props.stats[0]["total_visitors"]}
+          count={stats[0]?.total_visitors ?? 0}
         ></Card>
         <Card
           label="Unique Visitors"
           className="text-sky-500"
-          count={props.stats[0]["unique_visitors"]}
+          count={stats[0]?.unique_visitors ?? 0}
         ></Card>
         <Card
           label="Visitors Today"
           className="text-fuchsia-500"
-          count={props.stats[0]["today_visitors"]}
+          count={stats[0]?.today_visitors ?? 0}
         ></Card>
         <Card
           label="Visitors This Week"
           className="text-indigo-500"
-          count={props.stats[0]["weekly_visitors"]}
+          count={stats[0]?.weekly_visitors ?? 0}
         ></Card>
       </div>
 

@@ -1,0 +1,11 @@
+/node_modules
+/.next
+/.vercel
+/.nuxt
+/dist
+/.output
+/.cache
+/.idea
+/.vscode
+/.DS_Store
+.env
