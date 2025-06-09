@@ -4,12 +4,12 @@ This is my personal website to get to know more about me and my progress, this w
 
 ## Website
 
-- fadlim.space : [https://fadlim.space](https://fadlim.space)
+- fadlim.space : [https://fadlim.vercel.app](https://fadlim.vercel.app)
 
 ## Run Locally
 
 ```
-$ git clone https://github.com/mfadlika/Next-Profile_Page.git
+$ git clone https://github.com/mfadlika/personal.git
 $ cd Next-Profile_Page
 $ npm install
 $ npm run dev
@@ -17,7 +17,7 @@ $ npm run dev
 
 ## About the Website
 
-This website is built with Next JS and Tailwind, inspired by [Superrb](https://www.superrb.com) and animation of this website is with the help of [Animate Style](https://animate.style). To install Animate Style to your project:
+This website is built with Next JS and Tailwind, inspired by [Superrb](https://www.superrb.com) at first but I already changed the design and animation of this website is with the help of [Animate Style](https://animate.style). To install Animate Style to your project:
 
 ```
 $ npm install animate.css --save
