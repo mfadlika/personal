@@ -17,7 +17,7 @@ export default function Work(props: any) {
 
   function backSlideHandler() {
     if (slide === 0) {
-      setSlide(0);
+      setSlide(screen.length - 1);
     } else {
       setSlide(slide - 1);
     }
@@ -25,7 +25,7 @@ export default function Work(props: any) {
 
   function forwardSlideHandler() {
     if (slide === screen.length - 1) {
-      setSlide(slide);
+      setSlide(0);
     } else {
       setSlide(slide + 1);
     }
