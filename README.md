@@ -10,7 +10,7 @@ This is my personal website to get to know more about me and my progress, this w
 
 ```
 $ git clone https://github.com/mfadlika/personal.git
-$ cd Next-Profile_Page
+$ cd personal
 $ npm install
 $ npm run dev
 ```
