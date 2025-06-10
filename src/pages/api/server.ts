@@ -15,7 +15,13 @@ export default async function postAPI(ip: string | string[], site: string) {
     await executeQuery({
       query:
         "INSERT INTO server_visitor (ip, site, country, city, created_at) VALUES(?, ?, ?, ?, ?)",
-      values: [data["ip"], site, data["country_name"], data["city"], new Date()],
+      values: [
+        data["ip"],
+        site,
+        data["country_name"],
+        data["city"],
+        new Date(),
+      ],
     });
   } catch (error) {
     console.log(error);
@@ -38,7 +44,7 @@ export async function getStat(ip: string | string[], site: string) {
     });
     var city = await executeQuery({
       query:
-        "SELECT CONCAT(city, ', ', country) AS city, count(*) AS count FROM `server_visitor` GROUP BY city ORDER BY count DESC LIMIT 9",
+        "SELECT city, count(*) AS count FROM `server_visitor` GROUP BY city ORDER BY count DESC LIMIT 9",
       values: [],
     });
 
