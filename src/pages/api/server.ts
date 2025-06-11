@@ -3,14 +3,13 @@ import executeQuery from "../../../lib/db";
 
 export default async function postAPI(ip: string | string[], site: string) {
   try {
-    const { data } = await axios.get(`https://ipapi.co/146.75.160.28/json/`, {
+    const { data } = await axios.get(`https://ipapi.co/${ip}/json/`, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
           "(KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
       },
     });
-    console.log(data);
 
     await executeQuery({
       query:
